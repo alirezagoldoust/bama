@@ -57,7 +57,7 @@
                     <td>{{ item.power }}</td>
                     <td>{{ item.fuel }}</td>
                     <td>{{ item.acceleration }}</td>
-                    <td> <a href="ads/{{ item.id }}"><button type="button" class="btn btn-primary" >مشاهده آگهی ها</button></a> </td>
+                    <td> <a href="ads/?car={{ item.name }}"><button type="button" class="btn btn-primary" >مشاهده آگهی ها</button></a> </td>
                 </tr>
             {% endfor %}
         </tbody>
