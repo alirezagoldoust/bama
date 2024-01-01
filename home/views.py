@@ -8,12 +8,15 @@ def home_view(request):
         return render(request, "homepage/home.html", context={'cars':cars})
     else:
         # using query prameters
-        selected_car = str(request.POST['selected_car'])
-        selected_min = str(request.POST['minprice'])
-        selected_max = str(request.POST['maxprice'])
-        dest_url = '/ads/?car=' + selected_car
-        if len(selected_min):
+        selected_car = request.POST['selected_car']
+        selected_min = request.POST['minprice']
+        selected_max = request.POST['maxprice']
+        print([selected_car, selected_max, selected_min])
+        dest_url = '/ads/?'
+        if selected_car != '':
+            dest_url = dest_url + 'car=' + selected_car
+        if selected_min != '':
             dest_url = dest_url + '&min=' + selected_min
-        if len(selected_max):
+        if selected_max != '':
             dest_url = dest_url + '&max=' + selected_max
         return redirect(dest_url)
