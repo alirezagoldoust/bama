@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fa", dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Django Website</title>
+    <!-- Bootstrap CSS link (Make sure to include Bootstrap in your project) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../assets/style.css">
+    <title>Car Ads List</title>
+    <!-- Add any additional CSS or styling links if needed -->
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a  class="nav-link active" aria-current="page" href="/machines">ماشین ها</a>
+            </li>
+        </ul>
+        <a href="/" aria-current="page" class="navbar-brand mx-auto" data-v-5561ece8="" data-v-08673970="">
+            <br>
+            <svg width="81" height="65" viewBox="0 0 81 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="bama-logo__svg" data-v-5561ece8="">
+                <path d="M78.5 26.2959H62.5V42.2959H78.5V26.2959Z" fill="#1F1F1E" data-v-5561ece8=""></path> 
+                <path d="M18.5 2.2959H2.5V42.2959H18.5V2.2959Z" fill="#1F1F1E" data-v-5561ece8=""> </path> 
+                <path d="M58.5 2.2959H42.5V42.2959H58.5V2.2959Z" fill="#1F1F1E" data-v-5561ece8=""></path> 
+                <path d="M30.5 42.2959C34.9183 42.2959 38.5 38.7142 38.5 34.2959C38.5 29.8776 34.9183 26.2959 30.5 26.2959C26.0817 26.2959 22.5 29.8776 22.5 34.2959C22.5 38.7142 26.0817 42.2959 30.5 42.2959Z" fill="#1F1F1E" data-v-5561ece8=""></path>
+                <path d="M70.5 62.2959C74.9183 62.2959 78.5 58.7142 78.5 54.2959C78.5 49.8776 74.9183 46.2959 70.5 46.2959C66.0817 46.2959 62.5 49.8776 62.5 54.2959C62.5 58.7142 66.0817 62.2959 70.5 62.2959Z" fill="#1F1F1E" data-v-5561ece8=""></path>
+            </svg>
+        </a>
+</nav>
+<br><br>
+    <table class="table">
+        <thead>
+            <h3 style="margin-right: 5%;">ماشین ها </h3>
+            <br><br>
+            <tr>
+                <th> مدل </th>
+                <th> برند </th>
+                <th> نوع </th>
+                <th> توان </th>
+                <th> سوخت </th>
+                <th> شتاب </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cars %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.brand }}</td>
+                    <td>{{ item.type }}</td>
+                    <td>{{ item.power }}</td>
+                    <td>{{ item.fuel }}</td>
+                    <td>{{ item.acceleration }}</td>
+                    <td> <a href="ads/{{ item.id }}"><button type="button" class="btn btn-primary" >مشاهده آگهی ها</button></a> </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
